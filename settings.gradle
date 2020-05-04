@@ -1,2 +1,4 @@
 rootProject.name = 'java_rest'
+include 'core'
+include 'web'
 
