@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.RentalService;
 
+import java.util.List;
+
 @RestController
 public class RentalController {
     public static final Logger log= LoggerFactory.getLogger(RentalController.class);

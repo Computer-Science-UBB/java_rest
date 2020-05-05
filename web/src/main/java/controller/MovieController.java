@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.MovieService;
 
+import java.util.List;
+
 @RestController
 public class MovieController {
     public static final Logger log= LoggerFactory.getLogger(MovieController.class);

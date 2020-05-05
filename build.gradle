@@ -12,7 +12,7 @@ allprojects {
 
 
     ext {
-        springVersion = '5.0.3.RELEASE'
+        springVersion = '5.2.5.RELEASE'
         postgresqlVersion = '42.2.1'
         dbcpVersion = '2.2.0'
 
