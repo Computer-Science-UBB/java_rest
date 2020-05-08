@@ -8,6 +8,6 @@ public interface ClientProvider extends Provider<ClientDTO> {
     ClientsDTO filterClientsByFirstName(String first);
     ClientsDTO filterClientsBySecondName(String second);
     ClientsDTO filterClientsByAge(int age);
-    ClientsDTO getAllSortedAscendingByFields(String... fields);
-    ClientsDTO getAllSortedDescendingByFields(String... fields);
+    ClientsDTO getAllSortedAscendingByFields(String fields);
+    ClientsDTO getAllSortedDescendingByFields(String fields);
 }

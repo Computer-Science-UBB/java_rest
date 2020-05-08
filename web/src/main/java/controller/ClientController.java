@@ -106,9 +106,9 @@ public class ClientController {
     }
 
     @RequestMapping(value = "/clients/sorted/asc/{fields}", method = RequestMethod.GET)
-    ClientsDTO getAllSortedAscendingByFields(@PathVariable String... fields)
+    ClientsDTO getAllSortedAscendingByFields(@PathVariable String fields)
     {
-        log.trace("getAllSortedAscendingByFields - method entered: fields={}", (Object) fields);
+        log.trace("getAllSortedAscendingByFields - method entered: fields={}", fields);
         return new ClientsDTO(
                 clientConverter.convertModelsToDtos(
                         clientService.getAllSortedAscendingByFields(fields)
@@ -117,9 +117,9 @@ public class ClientController {
     }
 
     @RequestMapping(value = "/clients/sorted/desc/{fields}", method = RequestMethod.GET)
-    ClientsDTO getAllSortedDescendingByFields(@PathVariable String... fields)
+    ClientsDTO getAllSortedDescendingByFields(@PathVariable String fields)
     {
-        log.trace("getAllSortedDescendingByFields - method entered: fields={}", (Object) fields);
+        log.trace("getAllSortedDescendingByFields - method entered: fields={}", fields);
         return new ClientsDTO(
                 clientConverter.convertModelsToDtos(
                         clientService.getAllSortedDescendingByFields(fields)

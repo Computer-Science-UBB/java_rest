@@ -59,9 +59,9 @@ public class RentalController {
     }
 
     @RequestMapping(value = "/rentals/sorted/asc/{fields}", method = RequestMethod.GET)
-    RentalsDTO getAllSortedAscendingByFields(@PathVariable String... fields)
+    RentalsDTO getAllSortedAscendingByFields(@PathVariable String fields)
     {
-        log.trace("getAllSortedAscendingByFields - method entered: fields={}", (Object) fields);
+        log.trace("getAllSortedAscendingByFields - method entered: fields={}", fields);
         return new RentalsDTO(
                 rentalConverter.convertModelsToDtos(
                         rentalService.getAllSortedAscendingByFields(fields)
@@ -70,9 +70,9 @@ public class RentalController {
     }
 
     @RequestMapping(value = "/rentals/sorted/desc/{fields}", method = RequestMethod.GET)
-    RentalsDTO getAllSortedDescendingByFields(@PathVariable String... fields)
+    RentalsDTO getAllSortedDescendingByFields(@PathVariable String fields)
     {
-        log.trace("getAllSortedDescendingByFields - method entered: fields={}", (Object) fields);
+        log.trace("getAllSortedDescendingByFields - method entered: fields={}", fields);
         return new RentalsDTO(
                 rentalConverter.convertModelsToDtos(
                         rentalService.getAllSortedDescendingByFields(fields)

@@ -9,6 +9,6 @@ public interface MovieProvider extends Provider<MovieDTO> {
     MoviesDTO filterMoviesByDescription(String descr);
     MoviesDTO filterMoviesByPrice(int price);
     MoviesDTO filterMoviesByRating(int rating);
-    MoviesDTO getAllSortedAscendingByFields(String... fields);
-    MoviesDTO getAllSortedDescendingByFields(String... fields);
+    MoviesDTO getAllSortedAscendingByFields(String fields);
+    MoviesDTO getAllSortedDescendingByFields(String fields);
 }

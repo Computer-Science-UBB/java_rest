@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.web.client.RestTemplate;
 import provider.ClientProvider;
 import provider.RestClientProvider;
+import ui.Console;
 
 public class App {
     public static final String URL = "http://localhost:8080/api/clients";
@@ -14,8 +15,7 @@ public class App {
                         "clientconfig"
                 );
 
-        ClientProvider clientProvider = (ClientProvider) context.getBean(RestClientProvider.class);
-
-        clientProvider.getAllSortedAscendingByFields(new String[]{"age"}).getClients().forEach(System.out::println);
+        Console console = context.getBean(Console.class);
+        console.run();
     }
 }

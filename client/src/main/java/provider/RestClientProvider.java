@@ -45,17 +45,17 @@ public class RestClientProvider implements ClientProvider {
     }
 
     @Override
-    public ClientsDTO getAllSortedAscendingByFields(String... fields) {
+    public ClientsDTO getAllSortedAscendingByFields(String fields) {
         return restTemplate.getForObject(
-                URL + "/sorted/asc/{fields}",
+                URL + "/sorted/asc/" + fields,
                 ClientsDTO.class
         );
     }
 
     @Override
-    public ClientsDTO getAllSortedDescendingByFields(String... fields) {
+    public ClientsDTO getAllSortedDescendingByFields(String fields) {
         return restTemplate.getForObject(
-                URL + "/sorted/desc/{fields}",
+                URL + "/sorted/desc/" + fields,
                 ClientsDTO.class
         );
     }
@@ -88,6 +88,13 @@ public class RestClientProvider implements ClientProvider {
         return restTemplate.getForObject(
                 URL + "/" + ID,
                 ClientDTO.class
+        );
+    }
+
+    @Override
+    public void delete(Long ID) {
+        restTemplate.delete(
+                URL + "/" + ID
         );
     }
 }

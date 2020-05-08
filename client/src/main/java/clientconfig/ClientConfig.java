@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-@ComponentScan({"provider"})
+@ComponentScan({"provider", "ui"})
 public class ClientConfig {
     @Bean
     RestTemplate restTemplate() {

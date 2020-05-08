@@ -113,27 +113,21 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<Client> getAllSortedAscendingByFields(String... fields) {
-        log.trace("getAllSortedAscendingByFields - method entered: fields={}", (Object[]) fields);
+    public List<Client> getAllSortedAscendingByFields(String fields) {
+        log.trace("getAllSortedAscendingByFields - method entered: fields={}", fields);
         Sort sort = new Sort(Sort.Direction.ASC, fields);
-        Iterable<Client> clients = clientRepository.findAll(sort);
+        List<Client> clients = clientRepository.findAll(sort);
         log.trace("getAllSortedAscendingByFields - method finished");
-        return StreamSupport.stream(
-                clients.spliterator(),
-                false)
-                .collect(Collectors.toList());
+        return clients;
     }
 
     @Override
-    public List<Client> getAllSortedDescendingByFields(String... fields) {
-        log.trace("getAllSortedDescendingByFields - method entered: fields={}", (Object[]) fields);
+    public List<Client> getAllSortedDescendingByFields(String fields) {
+        log.trace("getAllSortedDescendingByFields - method entered: fields={}", fields);
         Sort sort = new Sort(Sort.Direction.DESC, fields);
-        Iterable<Client> clients = clientRepository.findAll(sort);
+        List<Client> clients = clientRepository.findAll(sort);
         log.trace("getAllSortedDescendingByFields - method finished");
-        return StreamSupport.stream(
-                clients.spliterator(),
-                false)
-                .collect(Collectors.toList());
+        return clients;
     }
 
     @Override

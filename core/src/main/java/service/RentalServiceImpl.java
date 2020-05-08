@@ -66,7 +66,7 @@ public class RentalServiceImpl implements RentalService{
     }
 
     @Override
-    public List<Rental> getAllSortedAscendingByFields(String... fields) {
+    public List<Rental> getAllSortedAscendingByFields(String fields) {
         Sort sort = new Sort(Sort.Direction.ASC, fields);
         Iterable<Rental> rentals = rentalRepository.findAll(sort);
         return StreamSupport.stream(
@@ -76,7 +76,7 @@ public class RentalServiceImpl implements RentalService{
     }
 
     @Override
-    public List<Rental> getAllSortedDescendingByFields(String... fields) {
+    public List<Rental> getAllSortedDescendingByFields(String fields) {
         Sort sort = new Sort(Sort.Direction.DESC, fields);
         Iterable<Rental> rentals = rentalRepository.findAll(sort);
         return StreamSupport.stream(
